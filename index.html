@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Display a popup on hover</title>
+    <meta property="og:description" content="When a user hovers over a custom marker, show a popup containing more information." />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.5.0/dist/maplibre-gl.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@4.5.0/dist/maplibre-gl.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Sora", sans-serif;
+        overflow-x: hidden;
+      }
+      html,
+      body,
+      #map {
+        height: 100%;
+      }
+
+      .maplibregl-popup {
+        max-width: 400px;
+        font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+
+      .maplibregl-popup-content {
+        background-color: #fff;
+        border-radius: 10px;
+        animation: fadein 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transform-origin: bottom;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+          scale: 0.9;
+        }
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <!-- <script defer src="./src/js/script.js"></script> -->
+  </body>
+</html>
